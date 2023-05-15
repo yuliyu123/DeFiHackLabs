@@ -2,7 +2,7 @@
 
 **Reproduce DeFi hack incidents using Foundry.**
 
-201 incidents included.
+206 incidents included.
 
 This repo is only for the educational purpose.
 
@@ -33,6 +33,16 @@ All articles are also published on [Substack](https://defihacklabs.substack.com/
 - Lesson 7: Hack Analysis: Nomad Bridge, August 2022 ( [English](https://github.com/SunWeb3Sec/DeFiHackLabs/tree/main/academy/onchain_debug/07_Analysis_nomad_bridge/en/) | [中文](https://github.com/SunWeb3Sec/DeFiHackLabs/tree/main/academy/onchain_debug/07_Analysis_nomad_bridge/) )
 
 ## List of Past DeFi Incidents
+
+[20230514 SellToken03](#20230514-selltoken03---unchecked-user-input)
+
+[20230513 Bitpaidio](#20230513-bitpaidio---business-logic-flaw)
+
+[20230513 SellToken02](#20230513-selltoken02---price-manipulation)
+
+[20230512 LW](#20230512-lw---flashloan-price-manipulation)
+
+[20230511 SellToken01](#20230511-selltoken01---business-logic-flaw)
 
 [20230510 SNK](#20230510-snk---reward-calculation-error)
 
@@ -476,9 +486,107 @@ All articles are also published on [Substack](https://defihacklabs.substack.com/
 ---
 
 ### List of DeFi Hacks & POCs
+
 ---
 
-### List of DeFi Hacks & POCs
+### 20230514 SellToken03 - Unchecked User Input
+
+### Lost: Unclear
+
+Testing
+```
+forge fmt -- --contracts ./src/test/SELLC02_exp.sol -vvv
+```
+
+#### Contract
+
+[SELLC02_exp.sol](src/test/SELLC02_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/BlockSecTeam/status/1657715018908180480
+
+---
+
+### 20230513 Bitpaidio - Business Logic Flaw
+
+### Lost: ~$30K
+
+Testing
+```
+forge test --contracts ./src/test/Bitpaidio_exp.sol -vvv  
+```
+
+#### Contract
+
+[Bitpaidio_exp.sol](src/test/Bitpaidio_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/BlockSecTeam/status/1657411284076478465
+
+---
+
+### 20230512 LW - FlashLoan Price Manipulation
+
+### Lost: ~$50k
+
+Testing
+```
+forge test --contracts ./src/test/LW_exp.sol -vvv
+```
+
+#### Contract
+
+[LW_exp.sol](src/test/LW_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/PeckShieldAlert/status/1656850634312925184
+
+https://twitter.com/hexagate_/status/1657051084131639296
+
+---
+
+### 20230513 SellToken02 - Price Manipulation
+
+### Lost: ~$197k
+
+Testing
+```
+forge test --contracts ./src/test/SellToken_exp.sol -vvv
+```
+
+#### Contract
+
+[SellToken_exp.sol](src/test/SellToken_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/BlockSecTeam/status/1657324561577435136
+
+---
+
+### 20230511 SellToken01 - Business Logic Flaw
+
+### Lost: ~$95k
+
+Testing
+```
+forge test --contracts ./src/test/SELLC_exp.sol -vvv 
+```
+
+#### Contract
+
+[SELLC_exp.sol](src/test/SELLC_exp.sol)
+
+#### Link Reference
+
+https://twitter.com/AnciliaInc/status/1656337400329834496
+
+https://twitter.com/AnciliaInc/status/1656341587054702598
+
+---
 
 ### 20230510 SNK - Reward Calculation Error
 
